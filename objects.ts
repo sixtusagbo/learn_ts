@@ -1,4 +1,4 @@
-// Explicit and redundant w/ type annotation
+// Explicit and redundant
 const person: {
   name: string;
   age: number;

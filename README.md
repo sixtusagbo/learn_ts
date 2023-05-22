@@ -1,12 +1,18 @@
 # Learn TypeScript
 
-Here, I'm tryna add TypeScript to my developer toolbox 😌.
+Here, I'm tryna add TypeScript to my developer toolbox 😌. I'll use TS as short for TypeScript.
 
 ## Contents
 
+- [Installation](#installation)
 - [Core Types](#core-types)
 - [Type Inference](#type-inference)
 - [How is type managed in TS vs JS?](#type-management)
+- [TS Compiler](https://github.com/sixtusagbo/learn_ts/tree/ts-compiler)
+
+## Installation
+
+I installed TS with `npm install -g typescript` and compiled my first ts file with `tsc app.ts`.
 
 ## Core Types
 

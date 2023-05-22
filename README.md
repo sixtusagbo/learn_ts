@@ -2,6 +2,12 @@
 
 Here, I'm tryna add TypeScript to my developer toolbox 😌.
 
+## Contents
+
+- [Core Types](#core-types)
+- [Type Inference](#type-inference)
+- [How is type managed in TS vs JS?](#type-management)
+
 ## Core Types
 
 There are the basic types of `number`, `string` and `boolean`. Note: all in lowercase, not the same as `String` in JavaScript.
@@ -34,3 +40,7 @@ For Instance:
 let num1: number = 3; // redundant
 const result = 12 + 3; // 15
 ```
+
+## Type Management
+
+TypeScript is statically typed. It uses static types that help you in development. JavaScript uses runtime types while TypeScript uses static types. TypeScript is compiled down to JavaScript for production, for instance `tsc app.ts`.

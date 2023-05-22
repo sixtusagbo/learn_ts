@@ -16,14 +16,13 @@ Some of the core types are:
 | Array                        | `[1, 2, 4]`                                       | Any JavaScript array, type can be flexible - `any[]` or strict - `string[]` |
 | Tuple                        | `[1, 'admin']`                                    | Fixed length and Fixed element type                                         |
 | Enums                        | `enum Roles {USER, ADMIN};`                       | Enumerated contant identifiers                                              |
-| `any`                        | \*                                                | Any kind of value is valid, very flexible.                                  |
+| `any`                        | \*                                                | Any kind of value is valid, most flexible type, disables type checking.     |
 | Unions                       | `input1: number            \| string`             | When a variable can accept specific different types                         |
 | Literals                     | `'as-text'`, `const num = 2.6;`                   | Specific version of a basic type                                            |
 | Type Aliases or Custom Types | `type Combinable = number             \| string;` | Self explanatory                                                            |
 | `void`                       | `function say(): void => console.log('Hi');`      | Nothing                                                                     |
 | `undefined`                  | `function doShit(): void {return;}`               | Kinda like JavaScript undefined, not necessary.                             |
-
-|
+| `unknown`                    | `let someInput: unknown;`                         | More strict than `any`. Prefer this type than `any`.                        |
 
 ## Type Inference
 

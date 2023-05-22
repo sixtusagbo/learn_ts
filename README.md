@@ -10,6 +10,8 @@ The simplest way to run TS Compiler is without any options `tsc <filename>`.
 - [Multiple Files](#multiple-files)
 - [Excluding Files](#excluding-files)
 - [Including Files](#including-files)
+- [Compiler Options](#compileroptions)
+  - [Target](#target)
 
 ## Watch Mode
 
@@ -52,3 +54,18 @@ Example:
 ```
 
 There's also a `files` option, it works like include but does not accept directory paths.
+
+## `compilerOptions`
+
+This is included by default when you run `tsc --init`. It takes an object that contains options on how your file should be compiled. Although this file is well commented, you have the description of the options next attached to them, I'll look at some of them here:
+
+- ### `target`
+  Here you can specify the JavaScript(ECMAScript) version you want your code to be compiled down to. Whether you want an older version like `"es5"` or a modern version like `"es2015"`.
+  Example:
+
+```json
+"compilerOptions": {
+  // es5, es6, es2015, es2016, es2017 and so on.
+  "target": "es2015"
+}
+```

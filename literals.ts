@@ -1,10 +1,7 @@
-type Combinable = number | string;
-type resultDescriptor = 'as-text' | 'as-number';
-
 function combine(
-  input1: Combinable,
-  input2: Combinable,
-  resultConversion: resultDescriptor
+  input1: number | string,
+  input2: number | string,
+  resultConversion: 'as-text' | 'as-number'
 ) {
   let result;
   if (
@@ -27,19 +24,3 @@ console.log(combinedAges);
 
 const combinedNames = combine('Joseph', 'Johnson', 'as-text');
 console.log(combinedNames);
-
-type User = { name: string; age: number };
-const u1: User = { name: 'Sixtus', age: 20 };
-
-console.log(u1);
-
-function greet(user: User) {
-  console.log('Hi, I am ' + user.name);
-}
-
-function isOlder(user: User, checkAge: number) {
-  return checkAge > user.age;
-}
-
-greet(u1);
-isOlder(u1, 23);

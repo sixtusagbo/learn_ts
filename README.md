@@ -1,8 +1,20 @@
 # TS Compiler
 
-Here, I'm tryna add TypeScript to my developer toolbox 😌.
+Here, I'm tryna add TypeScript to my developer toolbox 😌. I'll use TS as short for TypeScript.
 
-## Basic Types
+## Contents
+
+- [Installation](#installation)
+- [Core Types](#core-types)
+- [Type Inference](#type-inference)
+- [How is type managed in TS vs JS?](#type-management)
+- [TS Compiler](https://github.com/sixtusagbo/learn_ts/tree/ts-compiler)
+
+## Installation
+
+I installed TS with `npm install -g typescript` and compiled my first ts file with `tsc app.ts`.
+
+## Core Types
 
 There are the basic types of `number`, `string` and `boolean`. Note: all in lowercase, not the same as `String` in JavaScript.
 Some of the core types are:

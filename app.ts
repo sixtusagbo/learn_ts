@@ -1,12 +1,18 @@
-function displayProfile(name: string, age: number, showAge: boolean) {
-  console.log(`My name is ${name}`);
-  if (showAge) {
-    console.log(`I am ${age} years old.`);
-  }
+// Explicit and redundant
+const person: {
+  name: string,
+  age: number
+} = {
+  name: 'Sixtus',
+  age: 20,
 }
 
-const myName = 'Sixtus';
-const age = new Date().getFullYear()  - 2003;
+// Preferred syntax
+// Let TypeScript infer the type
+const person2 = {
+  name: 'John Doe',
+  age: 98,
+}
 
-
-displayProfile(myName, age, true);
+console.log(person.name);
+console.log(person2.name);

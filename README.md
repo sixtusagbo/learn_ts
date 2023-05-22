@@ -18,6 +18,7 @@ Some of the core types are:
 | Enums     | `enum Roles {USER, ADMIN}`            | Enumerated contant identifiers                                              |
 | `any`     | \*                                    | Any kind of value is valid, very flexible.                                  |
 | Unions    | `input1: number            \| string` | When a variable can accept specific different types                         |
+| Literals  | `'as-text'`, `const num = 2.6`        | Specific version of a basic type                                            |
 
 ## Type Inference
 

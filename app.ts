@@ -1,18 +1,12 @@
-// Explicit and redundant
-const person: {
-  name: string,
-  age: number
-} = {
+const person = {
   name: 'Sixtus',
   age: 20,
+  hobbies: ['Basketball', 'Music', 'Football']
 }
 
-// Preferred syntax
-// Let TypeScript infer the type
-const person2 = {
-  name: 'John Doe',
-  age: 98,
-}
+let favouriteActivities: any[];
+favouriteActivities = ['Sports', 3]
 
-console.log(person.name);
-console.log(person2.name);
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}

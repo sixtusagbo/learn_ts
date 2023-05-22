@@ -12,6 +12,7 @@ The simplest way to run TS Compiler is without any options `tsc <filename>`.
 - [Including Files](#including-files)
 - [Compiler Options](#compileroptions)
   - [Target](#target)
+  - [Source Maps](#sourcemap)
 
 ## Watch Mode
 
@@ -67,5 +68,17 @@ This is included by default when you run `tsc --init`. It takes an object that c
 "compilerOptions": {
   // es5, es6, es2015, es2016, es2017 and so on.
   "target": "es2015"
+  // ...
+}
+```
+
+- ### `sourceMap`
+  Source maps help with debugging using dev tools during development.
+
+```json
+"compilerOptions": {
+  // ...
+  "sourceMap": true
+  // ...
 }
 ```

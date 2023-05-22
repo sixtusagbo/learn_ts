@@ -14,6 +14,7 @@ Some of the core types are:
 | `boolean` | `true`, `false`           | Just these two, no "truthy" or "falsy" values.                              |
 | `object`  | `{age: 30}`               | Any JavaScript object is valid                                              |
 | Array     | `[1, 2, 4]`               | Any JavaScript array, type can be flexible - `any[]` or strict - `string[]` |
+| Tuple     | `[1, 'admin']`            | Fixed length and Fixed element type                                         |
 
 ## Type Inference
 

@@ -1,24 +1,17 @@
-const person: {
-  name: string,
-  age: number,
-  hobbies: string[],
-  role: [number, string] // tuple
-} = {
+enum Roles {USER, ADMIN};
+enum FileRoles {READ_ONLY = 10, READ_WRITE = 50, WRITE_ONLY = 20};
+
+const person = {
   name: 'Sixtus',
   age: 20,
   hobbies: ['Basketball', 'Music', 'Football'],
-  role: [1, 'admin']
+  role: Roles.ADMIN
 }
 
-person.role.push('user'); // push() is an exception
-// person.role[1] = 10; // Type 'number' is not assignable to type 'string'
-// person.role = [3, 'author', 'something else']; //! ERROR 
-
-let favouriteActivities: any[];
-favouriteActivities = ['Sports', 3]
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
+if (person.role === Roles.USER) {
+  console.log('Welcome to our application, visit docs to learn more!');
+} else {
+  console.log('Hi administrator!');
 }
 
 console.log(person);

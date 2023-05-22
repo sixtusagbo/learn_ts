@@ -2,9 +2,17 @@
 
 Here, I'm tryna add TypeScript to my developer toolbox 😌.
 
-## Basic Types
+## Core Types
 
 There are the basic types of `number`, `string` and `boolean`. Note: all in lowercase, not the same as `String` in JavaScript.
+The core types are:
+
+| Type      | Example                   | Remarks                                               |
+| --------- | ------------------------- | ----------------------------------------------------- |
+| `number`  | `1`,`5.3`,`-10`           | All numbers, no distiction between integers or floats |
+| `string`  | `'Sixtus'`,`'Hi'`,`'Wow'` | All text values (in quotes)                           |
+| `boolean` | `true`, `false`           | Just these two, no "truthy" or "falsy" values.        |
+| `object`  | `{age: 30}`               | Any JavaScript object is valid                        |
 
 ## Type Inference
 

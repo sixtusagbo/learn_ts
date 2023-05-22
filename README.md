@@ -20,6 +20,7 @@ Some of the core types are:
 | Unions                       | `input1: number            \| string`             | When a variable can accept specific different types                         |
 | Literals                     | `'as-text'`, `const num = 2.6;`                   | Specific version of a basic type                                            |
 | Type Aliases or Custom Types | `type Combinable = number             \| string;` | Self explanatory                                                            |
+| `void`                       | `function say(): void => console.log('Hi');`      | Nothing                                                                     |
 
 ## Type Inference
 

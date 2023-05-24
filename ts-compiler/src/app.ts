@@ -2,7 +2,7 @@ class Department {
   // you can avoid this double initialization with TS
   // private readonly id: string;
   // private name: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   // shorthand initialization
   constructor(private readonly id: string, public name: string) {}
@@ -33,6 +33,13 @@ class AccountingDepartment extends Department {
     super(id, 'Accounting');
   }
 
+  addEmployee(name: string): void {
+    if (name.toLowerCase() === 'sixtus') {
+      return;
+    }
+    this.employees.push(name);
+  }
+
   addReport(text: string) {
     this.reports.push(text);
   }
@@ -45,6 +52,8 @@ class AccountingDepartment extends Department {
 const it = new ITDepartment('it003', ['Sixtus']);
 const accounting = new AccountingDepartment('acc001');
 accounting.addReport('New ticket...');
+accounting.addEmployee('Sixtus');
+accounting.addEmployee('Isaac');
 
 console.log(it);
 console.log(accounting);

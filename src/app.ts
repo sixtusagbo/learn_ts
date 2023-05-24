@@ -1,13 +1,9 @@
-const userName = 'sixtusagbo';
+const addNumbers = (...numbers: number[]) =>
+  numbers.reduce((curResult, curValue) => curResult + curValue, 0);
 
-console.log(userName);
+// With tuples
+const addThreeNumbers = (...numbers: [number, number, number]) =>
+  numbers.reduce((curResult, curValue) => curResult + curValue, 0);
 
-function add(n1: number, n2: number) {
-  const sum = n1 + n2;
-  if (sum > 0) {
-    return sum;
-  }
-  return;
-}
-
-add(3, 6);
+console.log(addThreeNumbers(3, 4, 5));
+console.log(addNumbers(3, 4, 5, 56, 67, 2, 1));

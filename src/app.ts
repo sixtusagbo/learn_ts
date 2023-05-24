@@ -1,11 +1,11 @@
 class Department {
   // you can avoid this double initialization with TS
-  // private id: string;
+  // private readonly id: string;
   // private name: string;
   private employees: string[] = [];
 
   // shorthand initialization
-  constructor(private id: string, public name: string) {}
+  constructor(private readonly id: string, public name: string) {}
 
   describe() {
     console.log(`Department (${this.id}): ${this.name}`);

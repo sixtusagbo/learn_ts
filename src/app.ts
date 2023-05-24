@@ -1,13 +1,14 @@
 class Department {
-  public name: string;
+  // you can avoid this double initialization with TS
+  // private id: string;
+  // private name: string;
   private employees: string[] = [];
 
-  constructor(name: string) {
-    this.name = name;
-  }
+  // shorthand initialization
+  constructor(private id: string, public name: string) {}
 
   describe() {
-    console.log('Department: ' + this.name);
+    console.log(`Department (${this.id}): ${this.name}`);
   }
 
   addEmployee(employee: string) {
@@ -21,7 +22,7 @@ class Department {
   }
 }
 
-const computerScience = new Department('Computer Science');
+const computerScience = new Department('csc001', 'Computer Science');
 computerScience.addEmployee('Sixtus');
 computerScience.addEmployee('Mark');
 

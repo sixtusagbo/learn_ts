@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
   static fiscalYear = 2022;
   // you can avoid this double initialization with TS
   // private readonly id: string;
@@ -6,7 +6,7 @@ class Department {
   protected employees: string[] = [];
 
   // shorthand initialization
-  constructor(private readonly id: string, public name: string) {
+  constructor(protected readonly id: string, public name: string) {
     console.log(Department.fiscalYear);
   }
 
@@ -14,9 +14,7 @@ class Department {
     return { name };
   }
 
-  describe() {
-    console.log(`Department (${this.id}): ${this.name}`);
-  }
+  abstract describe(): void;
 
   addEmployee(employee: string) {
     // validation, etc
@@ -32,6 +30,10 @@ class Department {
 class ITDepartment extends Department {
   constructor(id: string, private admins: string[]) {
     super(id, 'IT');
+  }
+
+  describe(): void {
+    console.log(`IT Department - (${this.id})`);
   }
 }
 
@@ -55,6 +57,10 @@ class AccountingDepartment extends Department {
   constructor(id: string, private reports: string[] = []) {
     super(id, 'Accounting');
     this.lastReport = this.reports[0];
+  }
+
+  describe(): void {
+    console.log('Accounting Department - ID: ' + this.id);
   }
 
   addEmployee(name: string): void {
@@ -84,18 +90,10 @@ accounting.addReport('New ticket...');
 accounting.mostRecentReport = 'Year end report...';
 console.log(accounting.mostRecentReport);
 accounting.displayReports();
+accounting.describe();
 
 accounting.addEmployee('Sixtus');
 accounting.addEmployee('Isaac');
 
 console.log(it);
 console.log(accounting);
-
-const computerScience = new Department('csc001', 'Computer Science');
-computerScience.addEmployee('Sixtus');
-computerScience.addEmployee('Mark');
-
-// computerScience.employees[2] = 'Isaac'; //! Error
-
-computerScience.describe();
-computerScience.employeeInfo();

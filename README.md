@@ -8,7 +8,7 @@ Here, I'm tryna add TypeScript to my developer toolbox 😌. I'll use TS as shor
 - [Core Types](#core-types)
 - [Type Inference](#type-inference)
 - [How is type managed in TS vs JS?](#type-management)
-- [TS Compiler](https://github.com/sixtusagbo/learn_ts/tree/ts-compiler)
+- [TS Compiler](./ts-compiler/README.md)
 
 ## Installation
 

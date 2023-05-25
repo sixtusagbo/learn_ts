@@ -1,80 +1,28 @@
-type Admin = {
-  name: string;
-  privileges: string[];
-};
-
-type Employee = {
-  name: string;
-  startDate: Date;
-};
-
-// w/ interfaces
-// interface ElevatedEmployee extends Admin, Employee {}
-// OR
-// interface ElevatedEmployee =  Admin & Employee;
-
-type ElevatedEmployee = Admin & Employee;
-
-type Combinable = string | number;
-type Numeric = number | boolean;
-
-type Universal = Combinable & Numeric;
-
-const e1: ElevatedEmployee = {
-  name: 'Sixtus',
-  privileges: ['create-server'],
-  startDate: new Date(),
-};
-
-function add(a: Combinable, b: Combinable) {
-  // type guard w/ typeof
-  if (typeof a === 'string' || typeof b === 'string') {
-    return a.toString() + b.toString();
-  }
-  return a + b;
+interface Bird {
+  type: 'bird';
+  flyingSpeed: number;
 }
 
-type UnknownEmployee = Employee | Admin;
-
-function printEmployeeInfo(emp: UnknownEmployee) {
-  console.log('Name: ' + emp.name);
-  if ('privileges' in emp) {
-    console.log('Privileges: ' + emp.privileges);
-  }
-  if ('startDate' in emp) {
-    console.log('Starts on: ' + emp.startDate);
-  }
+interface Horse {
+  type: 'horse';
+  runningSpeed: number;
 }
 
-printEmployeeInfo(e1);
+type Animal = Bird | Horse;
 
-class Car {
-  drive() {
-    console.log('Driving...');
+function moveAnimal(animal: Animal) {
+  let speed;
+  switch (animal.type) {
+    case 'bird':
+      speed = animal.flyingSpeed;
+      break;
+    case 'horse':
+      speed = animal.runningSpeed;
+      break;
+    default:
+      break;
   }
+  console.log('Moving with speed: ' + speed);
 }
 
-class Truck {
-  drive() {
-    console.log('Driving truck...');
-  }
-
-  loadCargo(weight: number) {
-    console.log('Loading ' + weight + 'kg cargo...');
-  }
-}
-
-type Vehicle = Car | Truck;
-
-const v1 = new Car();
-const v2 = new Truck();
-
-function useVehicle(vehicle: Vehicle) {
-  vehicle.drive();
-  if (vehicle instanceof Truck) {
-    vehicle.loadCargo(4.5);
-  }
-}
-
-useVehicle(v1);
-useVehicle(v2);
+moveAnimal({ type: 'bird', flyingSpeed: 7 });

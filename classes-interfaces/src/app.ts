@@ -7,8 +7,11 @@ let add: AddFn;
 
 add = (n1: number, n2: number) => n1 + n2;
 
+console.log(add(3, 3));
+
 interface Named {
-  readonly name: string;
+  readonly name?: string;
+  outputName?: string;
 }
 
 // you can extend multiple interfaces
@@ -19,21 +22,27 @@ interface Greetable extends Named {
 
 // Can implement more than on interface
 class Person implements Greetable {
-  name: string;
+  name?: string;
   age = 21;
 
-  constructor(n: string) {
-    this.name = n;
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
   }
 
   greet(phrase: string): void {
-    console.log(phrase + ' ' + this.name);
+    if (this.name) {
+      console.log(phrase + ' ' + this.name);
+    } else {
+      console.log('Hi, there!');
+    }
   }
 }
 
 let user1: Greetable;
 
-user1 = new Person('Joe');
+user1 = new Person();
 // user1.name = 'Xavi'; //! Error b/c marked as readonly from the interface
 
 user1.greet('Hi there, I am');

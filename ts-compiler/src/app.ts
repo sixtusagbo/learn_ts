@@ -1,11 +1,18 @@
 class Department {
+  static fiscalYear = 2022;
   // you can avoid this double initialization with TS
   // private readonly id: string;
   // private name: string;
   protected employees: string[] = [];
 
   // shorthand initialization
-  constructor(private readonly id: string, public name: string) {}
+  constructor(private readonly id: string, public name: string) {
+    console.log(Department.fiscalYear);
+  }
+
+  static createEmployee(name: string) {
+    return { name };
+  }
 
   describe() {
     console.log(`Department (${this.id}): ${this.name}`);
@@ -66,6 +73,9 @@ class AccountingDepartment extends Department {
     console.log(this.reports);
   }
 }
+
+const employee1 = Department.createEmployee('Joseph');
+console.log(employee1, Department.fiscalYear);
 
 const it = new ITDepartment('it003', ['Sixtus']);
 const accounting = new AccountingDepartment('acc001');

@@ -22,3 +22,10 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
 }
 
 console.log(countAndDescribe('Hello World!'));
+
+function extract<T extends object, U extends keyof T>(obj: T, key: U) {
+  return 'Value: ' + obj[key];
+}
+
+// console.log(extract({ name: 'Sixtus' }, 'age')); //! Error
+console.log(extract({ name: 'Sixtus' }, 'name'));

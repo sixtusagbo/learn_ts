@@ -1,7 +1,7 @@
 /**
  * A Decorator
  *
- * Runs when JS finds your class definition.
+ * Runs when JavaScript finds your class definition.
  *
  * **Order**: When there are multiple decorators, the creation
  * of decorator functions happens in the other
@@ -20,10 +20,18 @@ function Logger(logString: string) {
 
 function WithTemplate(template: string, hookId: string) {
   console.log('Template Factory');
-  return function (_: Function) {
-    console.log('Rendering template');
-    const hook = document.getElementById(hookId);
-    hook!.innerHTML = template;
+  return function <T extends { new (...args: any[]): { name: string } }>(
+    originalConstructor: T
+  ) {
+    return class extends originalConstructor {
+      constructor(..._: any[]) {
+        super();
+        console.log('Rendering template');
+        const hook = document.getElementById(hookId)!;
+        hook.innerHTML = template;
+        hook.querySelector('h1')!.textContent = this.name;
+      }
+    };
   };
 }
 
@@ -36,6 +44,10 @@ class Person {
     console.log('Creating person object...');
   }
 }
+
+const person1 = new Person();
+
+console.log(person1);
 
 //  -----
 

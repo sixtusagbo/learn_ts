@@ -1,23 +1,21 @@
-class DataStorage<T extends string | number | boolean> {
-  private data: T[] = [];
-
-  addItem(item: T) {
-    this.data.push(item);
-  }
-
-  removeItem(item: T) {
-    this.data.splice(this.data.indexOf(item), 1);
-  }
-
-  getItems() {
-    return [...this.data];
-  }
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
 }
 
-const textStorage = new DataStorage<string>();
-textStorage.addItem('Mimi');
-textStorage.addItem('CSC');
-textStorage.removeItem('Mimi');
-console.log(textStorage.getItems());
+function createCourseGoal(
+  title: string,
+  description: string,
+  completeUntil: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = completeUntil;
+  return courseGoal as CourseGoal;
+}
 
-const numberStorage = new DataStorage<number>();
+const names: Readonly<string[]> = ['Sixtus', 'Joseph'];
+// names.push('Mark'); //! Error
+// names.pop(); //! Error

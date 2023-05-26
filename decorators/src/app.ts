@@ -40,7 +40,12 @@ class Person {
 //  -----
 
 /**
- * Executes when the class definition is registered by JS
+ * When do decorators execute?
+ *
+ * **NOTE:** Decorators executes when your class is defined. Athough,
+ * there are work arounds to modify that default behaviour. Thus,
+ * making it advanced so to say.
+ *
  * @param target prototype(instance) or constructor(static)
  * @param propertyName name of the property
  */
@@ -98,3 +103,6 @@ class Product {
     return this._price * (1 + tax);
   }
 }
+
+const b1 = new Product('Book', 19);
+const b2 = new Product('Book 2', 29);

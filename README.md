@@ -1,6 +1,6 @@
-# Learn TypeScript
+# TS Compiler
 
-Here, I'm tryna add TypeScript to my developer toolbox 😌.
+Here, I'm tryna add TypeScript to my developer toolbox 😌. I'll use TS as short for TypeScript.
 
 ## Contents
 
@@ -17,6 +17,18 @@ I installed TS with `npm install -g typescript` and compiled my first ts file wi
 ## Core Types
 
 There are the basic types of `number`, `string` and `boolean`. Note: all in lowercase, not the same as `String` in JavaScript.
+Some of the core types are:
+
+| Type      | Example                    | Remarks                                                                     |
+| --------- | -------------------------- | --------------------------------------------------------------------------- |
+| `number`  | `1`,`5.3`,`-10`            | All numbers, no distiction between integers or floats                       |
+| `string`  | `'Sixtus'`,`'Hi'`,`'Wow'`  | All text values (in quotes)                                                 |
+| `boolean` | `true`, `false`            | Just these two, no "truthy" or "falsy" values.                              |
+| `object`  | `{age: 30}`                | Any JavaScript object is valid                                              |
+| Array     | `[1, 2, 4]`                | Any JavaScript array, type can be flexible - `any[]` or strict - `string[]` |
+| Tuple     | `[1, 'admin']`             | Fixed length and Fixed element type                                         |
+| Enums     | `enum Roles {USER, ADMIN}` | Enumerated contant identifiers                                              |
+| `any`     | \*                         | Any kind of value is valid, very flexible.                                  |
 
 ## Type Inference
 

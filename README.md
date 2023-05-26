@@ -1,4 +1,4 @@
-# TS Compiler
+# Learn TypeScript
 
 Here, I'm tryna add TypeScript to my developer toolbox 😌. I'll use TS as short for TypeScript.
 
@@ -25,7 +25,7 @@ Some of the core types are:
 | `string`  | `'Sixtus'`,`'Hi'`,`'Wow'`  | All text values (in quotes)                                                 |
 | `boolean` | `true`, `false`            | Just these two, no "truthy" or "falsy" values.                              |
 | `object`  | `{age: 30}`                | Any JavaScript object is valid                                              |
-| Array     | `[1, 2, 4]`                | Any JavaScript array, type can be flexible - `any[]` or strict - `string[]` |
+| `Array`   | `[1, 2, 4]`                | Any JavaScript array, type can be flexible - `any[]` or strict - `string[]` |
 | Tuple     | `[1, 'admin']`             | Fixed length and Fixed element type                                         |
 | Enums     | `enum Roles {USER, ADMIN}` | Enumerated contant identifiers                                              |
 | `any`     | \*                         | Any kind of value is valid, very flexible.                                  |

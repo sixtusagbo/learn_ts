@@ -1,31 +1,23 @@
-function merge<T extends object, U extends object>(objA: T, objB: U) {
-  return Object.assign(objA, objB);
-}
+class DataStorage<T extends string | number | boolean> {
+  private data: T[] = [];
 
-const mergedObj = merge({ name: 'Sixtus' }, { gender: 'Male' });
-console.log(mergedObj);
-
-interface Lengthy {
-  length: number;
-}
-
-function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
-  let description = 'Got no value';
-  const count = element.length;
-
-  if (count === 1) {
-    description = 'Got 1 element';
-  } else if (count > 1) {
-    description = 'Got ' + count + ' elements';
+  addItem(item: T) {
+    this.data.push(item);
   }
-  return [element, description];
+
+  removeItem(item: T) {
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
 }
 
-console.log(countAndDescribe('Hello World!'));
+const textStorage = new DataStorage<string>();
+textStorage.addItem('Mimi');
+textStorage.addItem('CSC');
+textStorage.removeItem('Mimi');
+console.log(textStorage.getItems());
 
-function extract<T extends object, U extends keyof T>(obj: T, key: U) {
-  return 'Value: ' + obj[key];
-}
-
-// console.log(extract({ name: 'Sixtus' }, 'age')); //! Error
-console.log(extract({ name: 'Sixtus' }, 'name'));
+const numberStorage = new DataStorage<number>();

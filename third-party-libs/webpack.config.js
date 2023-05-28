@@ -1,4 +1,5 @@
 const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -6,7 +7,6 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
     publicPath: './',
   },
   devServer: {
@@ -35,4 +35,5 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  plugins: [new CleanPlugin.CleanWebpackPlugin()],
 };

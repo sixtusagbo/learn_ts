@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 
+import './CreateTodo.css';
+
 interface CreateTodoProps {
   onCreate: (text: string) => void;
 }
@@ -15,8 +17,8 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ onCreate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex' }}>
-      <div>
+    <form onSubmit={handleSubmit}>
+      <div className="form-control">
         <label htmlFor="todo_text">Todo Text: </label>
         <input type="text" id="todo_text" ref={textInputRef} required />
       </div>
